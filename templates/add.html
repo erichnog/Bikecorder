@@ -8,51 +8,75 @@
     <link rel="apple-touch-icon" href="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" /> 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="YES" /> 
-    <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/iui/iui.css";</style> 
-    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/iui/iui.js"></script> 
     <style type="text/css">
     #text{
       -webkit-appearance: none; 
       border: none; 
       font-size: 16px; 
       vertical-align: bottom; 
-      width: 150px;
+      width: 50%;
       min-height: 42px;
-      padding: 0px 0px 0 0px;
+      padding: 0px 0px 0px 0px;
+    }
+    #textarea{
+      -webkit-appearance: none; 
+      border: none; 
+      font-size: 16px; 
+      width: 95%;
+      margin-left: 6px;
+      /*margin-right: auto;*/
+      vertical-align: bottom; 
+      /*min-height: 84px;
+      padding: 6px -18px 6px 6px;*/
     }
     </style>
+    <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/iui/iui.css";</style> 
+    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/iui/iui.js"></script> 
+    <script>
+    // Value of the line-height CSS property for the textarea.
+    var TEXTAREA_LINE_HEIGHT = 13;
+
+    function grow(event) {
+        var textarea = event.target;
+        var newHeight = textarea.scrollHeight;
+        var currentHeight = textarea.clientHeight;
+
+        if (newHeight > currentHeight) {
+            textarea.style.height = newHeight + 5 * TEXTAREA_LINE_HEIGHT + 'px';
+        }
+    }
+    </script>
   </head>
   <body>
     <div class="toolbar">
       <h1>Percurso</h1>
     </div>
-<!--    <div class="row">
-    <img src="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" width="57" height="57">
-    </div>
--->
     <form title="Novo Percurso" class="panel" selected="true">
+      <div>
+      <img src="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" width="57" height="57" style="float:left; margin-right: 10px;">
       <h2>Adicione um novo percurso</h2>
+      </div>
       <fieldset>
         <div class="row">
-          <label>Data </label><input type="text" name="date" id="text"/>
+          <label>Data </label><input type="number" name="date" id="text"/>
         </div>
         <div class="row">
-          <label>Percurso </label><input type="text" name="path" id="text"/>
+          <label>Dist&acirc;ncia </label><input type="number" name="distance" id="text"/>
         </div>
         <div class="row">
-          <label>Dist&acirc;ncia </label><input type="text" name="distance" id="text"/>
+          <label>Tempo </label><input type="number" name="time" id="text"/>
         </div>
         <div class="row">
-          <label>Tempo </label><input type="text" name="time" id="text"/>
+          <label>Vel. m&eacute;dia </label><input type="number" name="avg_speed" id="text"/>
         </div>
         <div class="row">
-          <label>Vel. m&eacute;dia </label><input type="text" name="avg_speed" id="text"/>
+          <label>Vel. m&aacute;xima </label><input type="number" name="max_speed" id="text"/>
         </div>
         <div class="row">
-          <label>Vel. m&aacute;xima </label><input type="text" name="max_speed" id="text"/>
+          <label>Percurso </label><br><br><textarea id="textarea" rows="2" cols="45" name="path" onkeyup="grow(event);" onchange="grow(event);"></textarea>
         </div>
        <div class="row">
-          <label>Observa&ccedil;&atilde;o </label><br><br><textarea rows="10" cols="45" name="observation">Observação</textarea>
+          <label>Observa&ccedil;&atilde;o </label><br><br><textarea id="textarea" rows="2" cols="45" name="observation" onkeyup="grow(event);" onchange="grow(event);"></textarea>
         </div>
      </fieldset>
      <a class="whiteButton" type="submit" href="">Salvar</a>
