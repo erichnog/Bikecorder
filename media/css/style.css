@@ -18,3 +18,14 @@
   /*min-height: 84px;
   padding: 6px -18px 6px 6px;*/
 }
+
+.icon_right,
+.icon_left{
+    margin: 30px 30px 30px 30px ;
+}
+.icon_left{
+    float:left; 
+}
+.icon_right{
+    float: right;
+}
