@@ -8,50 +8,17 @@
     <link rel="apple-touch-icon" href="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" /> 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="YES" /> 
-    <style type="text/css">
-    #text{
-      -webkit-appearance: none; 
-      border: none; 
-      font-size: 16px; 
-      vertical-align: bottom; 
-      width: 50%;
-      min-height: 42px;
-      padding: 0px 0px 0px 0px;
-    }
-    #textarea{
-      -webkit-appearance: none; 
-      border: none; 
-      font-size: 16px; 
-      width: 95%;
-      margin-left: 6px;
-      /*margin-right: auto;*/
-      vertical-align: bottom; 
-      /*min-height: 84px;
-      padding: 6px -18px 6px 6px;*/
-    }
-    </style>
+    <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/css/style.css";></style>
     <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/iui/iui.css";</style> 
     <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/iui/iui.js"></script> 
-    <script>
-    // Value of the line-height CSS property for the textarea.
-    var TEXTAREA_LINE_HEIGHT = 13;
-
-    function grow(event) {
-        var textarea = event.target;
-        var newHeight = textarea.scrollHeight;
-        var currentHeight = textarea.clientHeight;
-
-        if (newHeight > currentHeight) {
-            textarea.style.height = newHeight + 5 * TEXTAREA_LINE_HEIGHT + 'px';
-        }
-    }
-    </script>
+    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/js/style.js"></script> 
+    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/js/bikecorder.js"></script> 
   </head>
   <body>
     <div class="toolbar">
       <h1>Percurso</h1>
     </div>
-    <form title="Novo Percurso" class="panel" selected="true">
+    <form name="novo_percurso" title="Novo Percurso" class="panel" selected="true">
       <div>
       <img src="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" width="57" height="57" style="float:left; margin-right: 10px;">
       <h2>Adicione um novo percurso</h2>
@@ -79,7 +46,7 @@
           <label>Observa&ccedil;&atilde;o </label><br><br><textarea id="textarea" rows="2" cols="45" name="observation" onkeyup="grow(event);" onchange="grow(event);"></textarea>
         </div>
      </fieldset>
-     <a class="whiteButton" type="submit" href="">Salvar</a>
+     <input class="whiteButton" type="submit" value="Salvar" onClick="salvar(document.novo_percurso)" style="width: 100%;">
     </form>
 
   </body>
