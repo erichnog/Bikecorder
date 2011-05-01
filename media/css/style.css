@@ -19,6 +19,12 @@
   padding: 6px -18px 6px 6px;*/
 }
 
+#submitbutton{
+    font-size: 17px;
+    width: 100%;
+    margin: 0 6px 0 6px;
+}
+
 .icon_right,
 .icon_left{
     margin: 30px 30px 30px 30px ;

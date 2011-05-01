@@ -8,47 +8,53 @@
     <link rel="apple-touch-icon" href="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" /> 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="YES" /> 
+    <!-- 
     <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/css/style.css";></style>
-    <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/iui/iui.css";</style> 
-    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/iui/iui.js"></script> 
+    -->
+    <!-- iWebKit -->
+    <link href="{{ MEDIA_URL }}../media/iwebkit/css/developer-style.css" rel="stylesheet" media="screen" type="text/css" />
+    <script src="{{ MEDIA_URL }}../media/iwebkit/javascript/developer-functions.js" type="text/javascript"></script>
+    
     <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/js/style.js"></script> 
     <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/js/bikecorder.js"></script> 
   </head>
   <body>
-    <div class="toolbar">
-      <h1 class="pageTitle">Percurso</h1>
-      <a id="backButton" class="button" href="/" style="display: block;">In&iacute;cio</a>
-    </div>
-    <form name="novo_percurso" title="Novo Percurso" class="panel" selected="true">
-      <div>
-      <img src="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" width="57" height="57" style="float:left; margin-right: 10px;">
-      <h2>Adicione um novo percurso</h2>
+    <div id="topbar">
+      <div id="leftnav">
+        <a href="/"><img alt="home" src="{{ MEDIA_URL }}../media/iwebkit/images/home.png" /></a>
       </div>
+      <div id="title">Novo Percurso</div>
+    </div>
+    <div id="content">
+      <form name="new_path">
       <fieldset>
-        <div class="row">
-          <label>Data </label><input type="number" name="date" id="text"/>
-        </div>
-        <div class="row">
-          <label>Dist&acirc;ncia </label><input type="number" name="distance" id="text"/>
-        </div>
-        <div class="row">
-          <label>Tempo </label><input type="number" name="time" id="text"/>
-        </div>
-        <div class="row">
-          <label>Vel. m&eacute;dia </label><input type="number" name="avg_speed" id="text"/>
-        </div>
-        <div class="row">
-          <label>Vel. m&aacute;xima </label><input type="number" name="max_speed" id="text"/>
-        </div>
-        <div class="row">
-          <label>Percurso </label><br><br><textarea id="textarea" rows="2" cols="45" name="path" onkeyup="grow(event);" onchange="grow(event);"></textarea>
-        </div>
-       <div class="row">
-          <label>Observa&ccedil;&atilde;o </label><br><br><textarea id="textarea" rows="2" cols="45" name="observation" onkeyup="grow(event);" onchange="grow(event);"></textarea>
-        </div>
-     </fieldset>
-     <input class="whiteButton" type="submit" value="Salvar" onClick="salvar(document.novo_percurso)" style="width: 100%;">
-    </form>
-
+        <span class="graytitle">Adicione um novo percurso</span>
+        <ul class="pageitem">
+          <li class="smallfield">
+            <span class="name">Data</span><input type="number" name="date">
+          </li>
+          <li class="smallfield">
+            <span class="name">Dist&acirc;ncia</span><input type="number" name="distance">
+          </li>
+          <li class="smallfield">
+            <span class="name">Tempo</span><input type="number" name="time">
+          </li>
+          <li class="smallfield">
+            <span class="name">Vel. m&eacute;dia</span><input type="number" name="avg_speed">
+          </li>
+          <li class="smallfield">
+            <span class="name">Vel. m&aacute;xima</span><input type="number" name="max_speed">
+          </li>
+          <li class="textbox">
+            <span class="header">Percurso</span><textarea name="path" type="text" rows="2" style="-webkit-appearance: none; border: 0;" onkeyup="grow(event);" onchange="grow(event);"></textarea>
+          </li>
+          <li class="textbox">
+            <span class="header">Observa&ccedil;&atilde;o</span><textarea name="observation" type="text" rows="2" style="-webkit-appearance: none; border: 0;" onkeyup="grow(event);" onchange="grow(event);"></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      <input type="submit" value="Salvar" style="font-size: 17px;width: 95%;margin: 0 6px 12px 6px;" onClick="salvar(document.new_path)"/>
+      </form>
+    </div>
   </body>
 </html>
