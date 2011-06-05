@@ -1,0 +1,19 @@
+CACHE MANIFEST
+#version 0.1
+
+#pages
+/
+/add/
+/add/?*
+
+#css
+/static/iwebkit/css/developer-style.css
+
+#java script
+/static/iwebkit/javascript/developer-functions.js
+/static/js/style.js
+/static/js/bikecorder.js
+
+#images
+/static/iwebkit/images/home.png
+/static/iui/iui-logo-touch-icon.png
