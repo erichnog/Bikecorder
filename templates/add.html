@@ -1,32 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<!DOCTYPE html> 
  
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html manifest="http://192.168.0.100:8081/bikecorder.manifest">
   <head>
     <title>Adicione um novo percurso</title>
     <meta name="viewport" content="width=devicewidth; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> 
-    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}../media/iui/iui-logo-touch-icon.png" /> 
+    <link rel="apple-touch-icon" href="/static/iui/iui-logo-touch-icon.png" /> 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="YES" /> 
     <!-- 
     <style type="text/css" media="screen">@import "{{ MEDIA_URL }}../media/css/style.css";></style>
     -->
     <!-- iWebKit -->
-    <link href="{{ MEDIA_URL }}../media/iwebkit/css/developer-style.css" rel="stylesheet" media="screen" type="text/css" />
-    <script src="{{ MEDIA_URL }}../media/iwebkit/javascript/developer-functions.js" type="text/javascript"></script>
+    <link href="/static/iwebkit/css/developer-style.css" rel="stylesheet" media="screen" type="text/css" />
+    <script src="/static/iwebkit/javascript/developer-functions.js" type="text/javascript"></script>
     
-    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/js/style.js"></script> 
-    <script type="application/x-javascript" src="{{ MEDIA_URL }}../media/js/bikecorder.js"></script> 
+    <script type="application/x-javascript" src="/static/js/style.js"></script> 
+    <script type="application/x-javascript" src="/static/js/bikecorder.js"></script> 
   </head>
   <body>
     <div id="topbar">
       <div id="leftnav">
-        <a href="/"><img alt="home" src="{{ MEDIA_URL }}../media/iwebkit/images/home.png" /></a>
+        <a href="/"><img alt="home" src="/static/iwebkit/images/home.png" /></a>
       </div>
       <div id="title">Novo Percurso</div>
     </div>
     <div id="content">
-      <form name="new_path">
+      <form name="new_path" action="new_path">
       <fieldset>
         <span class="graytitle">Adicione um novo percurso</span>
         <ul class="pageitem">
@@ -53,7 +52,7 @@
           </li>
         </ul>
       </fieldset>
-      <input type="submit" value="Salvar" style="font-size: 17px;width: 95%;margin: 0 6px 12px 6px;" onClick="salvar(document.new_path)"/>
+      <input type="button" value="Salvar" style="font-size: 17px;width: 95%;margin: 0 6px 12px 6px;" onClick="salvar(document.new_path)"/>
       </form>
     </div>
   </body>
