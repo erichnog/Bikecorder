@@ -1,10 +1,10 @@
 CACHE MANIFEST
-#version 0.1
+#version 0.27
 
 #pages
 /
-/add/
-/add/?*
+/add
+/list/
 
 #css
 /static/iwebkit/css/developer-style.css
@@ -16,4 +16,5 @@ CACHE MANIFEST
 
 #images
 /static/iwebkit/images/home.png
+/static/iwebkit/images/navleft.png
 /static/iui/iui-logo-touch-icon.png

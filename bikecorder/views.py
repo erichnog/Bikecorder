@@ -11,5 +11,9 @@ def add(request):
     """docstring for add"""
     return render_to_response('add.html', {})
 
+def list(request):
+    """docstring for list"""
+    return render_to_response('list.html', {})
+
 def manifest(request):
     return HttpResponse(render_to_string('bikecorder.manifest', {}), mimetype='text/cache-manifest')
